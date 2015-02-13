@@ -12,17 +12,19 @@ import edu.wpi.first.wpilibj.PowerDistributionPanel;
  */
 public class RobotMap {
 	
-	protected static PowerDistributionPanel powerDistributionPanel0;
-	protected static CANJaguar canJaguar1;
-	protected static CANJaguar canJaguar2;
-	protected static CANJaguar canJaguar3;
-	protected static CANJaguar canJaguar4;
-	protected static CANJaguar canJaguar5;
-	protected static CANJaguar canJaguar6;
-	protected static CANJaguar canJaguar7;
-	protected static CANJaguar canJaguar8;
+	public static PowerDistributionPanel powerDistributionPanel0;
+	public static CANJaguar canJaguar1;
+	public static CANJaguar canJaguar2;
+	public static CANJaguar canJaguar3;
+	public static CANJaguar canJaguar4;
+	public static CANJaguar canJaguar5;
+	public static CANJaguar canJaguar6;
+	public static CANJaguar canJaguar7;
+	public static CANJaguar canJaguar8;
 	
-	protected static RobotDrive robotDrive;
+	public static RobotDrive robotDrive;
+	
+	
 	
 	public static void init() {
 		powerDistributionPanel0 = new PowerDistributionPanel();
@@ -33,10 +35,10 @@ public class RobotMap {
 		canJaguar5 = new CANJaguar(5);
 		canJaguar6 = new CANJaguar(6);
 		canJaguar7 = new CANJaguar(7);
-		canJaguar8 = new CANJaguar(8);
 		
 		robotDrive = new RobotDrive(canJaguar1, canJaguar2,
 				                     canJaguar3, canJaguar4);
+		
 	}
     // For example to map the left and right motors, you could define the
     // following variables to use with your drivetrain subsystem.
@@ -47,27 +49,4 @@ public class RobotMap {
     // number and the module. For example you with a rangefinder:
     // public static int rangefinderPort = 1;
     // public static int rangefinderModule = 1;
-	
-	public PowerDistributionPanel getPowerDistributionPanel1() {
-		return powerDistributionPanel0;}
-	public CANJaguar getCanJaguar1() {
-		return canJaguar1;}
-	public CANJaguar getCanJaguar2() {
-		return canJaguar2;}
-	public CANJaguar getCanJaguar3() {
-		return canJaguar3;}
-	public static CANJaguar getCanJaguar4() {
-		return canJaguar4;}
-	public CANJaguar getCanJaguar5() {
-		return canJaguar5;}
-	public static CANJaguar getCanJaguar6() {
-		return canJaguar6;}
-	public static CANJaguar getCanJaguar7() {
-		return canJaguar7;}
-	public static CANJaguar getCanJaguar8() {
-		return canJaguar8;}
-	
-	public static RobotDrive getRobotDrive() {
-		return robotDrive;
-	}
 }

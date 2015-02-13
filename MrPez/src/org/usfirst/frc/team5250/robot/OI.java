@@ -35,7 +35,7 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand()); */
 	
-	Joystick joystick0 = new Joystick(0);
+	protected static Joystick joystick0 = new Joystick(0);
 	
 	public Joystick getJoystick0() {
 		return joystick0;
