@@ -26,12 +26,13 @@ public class PezDefault extends CommandBase {
 		if(pass==true&&OI.joystick0.getRawButton(5)) {
 			goalPosition -= 90;
 			pez.setPezPosition(goalPosition);
-			SmartDashboard.putNumber("goalPosition", goalPosition);
+			SmartDashboard.putNumber("PezGoalPosition", goalPosition);
 		} else if(pass==true&&OI.joystick0.getRawButton(5)) {
 			goalPosition -= 90;
 			pez.setPezPosition(goalPosition);
-			SmartDashboard.putNumber("goalPosition", goalPosition);
+			SmartDashboard.putNumber("PezGoalPosition", goalPosition);
 		}
+		pez.getPezPosition();
 	}
 	
 	protected boolean isFinished() {
