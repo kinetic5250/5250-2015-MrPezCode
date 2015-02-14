@@ -1,9 +1,9 @@
 package org.usfirst.frc.team5250.robot.commands;
 
-import org.usfirst.frc.team5250.robot.OI;
+//import org.usfirst.frc.team5250.robot.OI;
 
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class PezDefault extends CommandBase {	
 	
@@ -22,8 +22,8 @@ public class PezDefault extends CommandBase {
 	}
 	
 	protected void execute() {
-		pass = timer.hasPeriodPassed(200);
-		if(pass==true&&OI.joystick0.getRawButton(5)) {
+		/*pass = timer.hasPeriodPassed(200);
+		if(pass==true&&OI.joystick0.getRawButton(4)) {
 			goalPosition -= 90;
 			pez.setPezPosition(goalPosition);
 			SmartDashboard.putNumber("PezGoalPosition", goalPosition);
@@ -32,7 +32,7 @@ public class PezDefault extends CommandBase {
 			pez.setPezPosition(goalPosition);
 			SmartDashboard.putNumber("PezGoalPosition", goalPosition);
 		}
-		pez.getPezPosition();
+		pez.getPezPosition();*/
 	}
 	
 	protected boolean isFinished() {

@@ -5,6 +5,8 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+//import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team5250.robot.commands.AutoCommand;
 
@@ -16,19 +18,18 @@ import org.usfirst.frc.team5250.robot.commands.AutoCommand;
  * directory.
  */
 public class Robot extends IterativeRobot {
-
-	public static OI oi;
     Command autonomousCommand;
-
+    SendableChooser sendableChooser;
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-		oi = new OI();
 		RobotMap.init();
+		OI.init();
         // instantiate the command used for the autonomous period
-        autonomousCommand = new AutoCommand();
+        sendableChooser = new SendableChooser();
+        sendableChooser.addDefault("Autocommand", new AutoCommand());
     }
 	
 	public void disabledPeriodic() {
@@ -75,5 +76,6 @@ public class Robot extends IterativeRobot {
      */
     public void testPeriodic() {
         LiveWindow.run();
+        Scheduler.getInstance().run();
     }
 }

@@ -4,7 +4,8 @@ import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.CameraServer;
+import edu.wpi.first.wpilibj.DigitalInput;
+
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -13,7 +14,6 @@ import edu.wpi.first.wpilibj.CameraServer;
  * floating around.
  */
 public class RobotMap {
-	public static CameraServer cameraServer;
 	
 	public static PowerDistributionPanel powerDistributionPanel0;
 	public static CANJaguar canJaguar21;
@@ -30,6 +30,11 @@ public class RobotMap {
 	public static Talon talon1;
 	public static Talon talon2;
 	
+	public static DigitalInput digitalInput0;
+	public static DigitalInput digitalInput1;
+	public static DigitalInput digitalInput2;
+	public static DigitalInput digitalInput3;
+	
 	public static void init() {
 		
 		powerDistributionPanel0 = new PowerDistributionPanel();
@@ -41,14 +46,15 @@ public class RobotMap {
 		canJaguar26 = new CANJaguar(26); //Arm Mover
 		canJaguar27 = new CANJaguar(27); //Claw Mover
 		
-		robotDrive = new RobotDrive(canJaguar21, canJaguar23,
-				                     canJaguar22, canJaguar24); //Basic DriveTrain
+		robotDrive = new RobotDrive(canJaguar21, canJaguar23, canJaguar22, canJaguar24); //Basic DriveTrain
 		
 		talon0 = new Talon(0); //Pawl left w/ limit switches
 		talon1 = new Talon(1); //Pawl right w/ limit switches
 		talon2 = new Talon(2); //Claw w/ limit switches
-
-		cameraServer = CameraServer.getInstance();
-    	cameraServer.startAutomaticCapture("cam0");
+		
+		digitalInput0 = new DigitalInput(0);
+		digitalInput1 = new DigitalInput(1);
+		digitalInput2 = new DigitalInput(2);
+		digitalInput3 = new DigitalInput(3);
 	}
 }

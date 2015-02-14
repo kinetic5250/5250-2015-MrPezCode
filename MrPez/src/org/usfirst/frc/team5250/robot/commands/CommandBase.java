@@ -5,10 +5,13 @@ import edu.wpi.first.wpilibj.command.Command;
 //import org.usfirst.frc.team5250.robot.Robot;
 import org.usfirst.frc.team5250.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5250.robot.subsystems.Pez;
+import org.usfirst.frc.team5250.robot.subsystems.Pawl;
+
 
 public class CommandBase extends Command {
 	protected static DriveTrain driveTrain = new DriveTrain();
 	protected static Pez pez = new Pez();
+	protected static Pawl pawl = new Pawl();
 	
 	// Called just before this Command runs the first time
     protected void initialize() {
