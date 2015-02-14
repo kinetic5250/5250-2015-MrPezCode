@@ -2,7 +2,8 @@ package org.usfirst.frc.team5250.robot;
 
 //import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.Joystick;
-
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import org.usfirst.frc.team5250.robot.commands.*;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -34,11 +35,11 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand()); */
-	
-	protected static Joystick joystick0 = new Joystick(0);
-	
-	public Joystick getJoystick0() {
-		return joystick0;
+	public OI() {
+		SmartDashboard.putData("AutonomousCommand", new AutoCommand());
 	}
+	
+	public static Joystick joystick0 = new Joystick(0);
+
 }
 

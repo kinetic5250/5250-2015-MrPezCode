@@ -3,13 +3,16 @@ package org.usfirst.frc.team5250.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 
 //import org.usfirst.frc.team5250.robot.Robot;
-
+import org.usfirst.frc.team5250.robot.subsystems.DriveTrain;
+import org.usfirst.frc.team5250.robot.subsystems.Pez;
 
 public class CommandBase extends Command {
-	
+	protected DriveTrain driveTrain = new DriveTrain();
+	protected Pez pez = new Pez();
 	
 	// Called just before this Command runs the first time
     protected void initialize() {
+    	
     }
 
     // Called repeatedly when this Command is scheduled to run
