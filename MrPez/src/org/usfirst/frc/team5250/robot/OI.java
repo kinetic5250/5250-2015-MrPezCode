@@ -36,10 +36,9 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand()); */
 	public OI() {
-		SmartDashboard.putData("AutonomousCommand", new AutoCommand());
+		//SmartDashboard.putData("AutonomousCommand", new AutoCommand());
 	}
 	
 	public static Joystick joystick0 = new Joystick(0);
-
+	
 }
-

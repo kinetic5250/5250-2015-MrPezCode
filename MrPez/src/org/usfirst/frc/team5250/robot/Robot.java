@@ -18,7 +18,6 @@ import org.usfirst.frc.team5250.robot.commands.AutoCommand;
 public class Robot extends IterativeRobot {
 
 	public static OI oi;
-
     Command autonomousCommand;
 
     /**
@@ -27,6 +26,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
+		RobotMap.init();
         // instantiate the command used for the autonomous period
         autonomousCommand = new AutoCommand();
     }

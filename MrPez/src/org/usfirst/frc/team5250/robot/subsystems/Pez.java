@@ -12,24 +12,24 @@ public class Pez extends Subsystem {
 	double currentPosition = 0.0;
 	
 	public Pez() {
-		RobotMap.canJaguar5.setPositionMode(CANJaguar.kQuadEncoder, 360, 10.0, 0.4, 0.2);
-		RobotMap.canJaguar5.enableControl();
+		RobotMap.canJaguar25.setPositionMode(CANJaguar.kQuadEncoder, 1, 10.0, 0, 0);
+		RobotMap.canJaguar25.enableControl();
 	}
 	
 	public double zeroPezPosition() {
-		RobotMap.canJaguar5.set(0);
+		RobotMap.canJaguar25.set(0);
 		SmartDashboard.putNumber("PezSetPosition", 0.0);
 		return 0.0;
 	}
 	
 	public double setPezPosition(double position) {
-		RobotMap.canJaguar5.set(position);
+		RobotMap.canJaguar25.set(position);
 		SmartDashboard.putNumber("PezSetPosition", position);
 		return position;
 	}
 	
 	public double getPezPosition() {
-		currentPosition = RobotMap.canJaguar5.getPosition();
+		currentPosition = RobotMap.canJaguar25.getPosition();
 		SmartDashboard.putNumber("PezSetPosition", currentPosition);
 		return currentPosition;
 	}
