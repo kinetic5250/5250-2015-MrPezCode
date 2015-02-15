@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Dashboard {
 	public static void read() {
 		SmartDashboard.putNumber("Jaguar Bus Voltage", RobotMap.canJaguar21.getBusVoltage());
-		SmartDashboard.putNumber("Ultrasonic Voltage", RobotMap.analogInput0.getAverageVoltage());
 		SmartDashboard.putNumber("Jaguar21 speed", RobotMap.canJaguar21.get());
 		SmartDashboard.putNumber("Jaguar22 speed", RobotMap.canJaguar22.get());
 		SmartDashboard.putNumber("Jaguar23 speed", RobotMap.canJaguar23.get());

@@ -5,8 +5,6 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.AnalogInput;
-
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -35,7 +33,6 @@ public class RobotMap {
 	public static DigitalInput digitalInput1;
 	public static DigitalInput digitalInput2;
 	public static DigitalInput digitalInput3;
-	public static AnalogInput analogInput0;
 	
 	public static void init() {
 		
@@ -58,6 +55,5 @@ public class RobotMap {
 		digitalInput1 = new DigitalInput(1);//Left close
 		digitalInput2 = new DigitalInput(2);//Right open
 		digitalInput3 = new DigitalInput(3);//Right close
-		analogInput0 = new AnalogInput(0);
 	}
 }

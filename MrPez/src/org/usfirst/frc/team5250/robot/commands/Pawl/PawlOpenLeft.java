@@ -12,18 +12,17 @@ public class PawlOpenLeft extends CommandBase {
 	}
 	
 	protected void execute() {
-		System.out.println("PawlOpenLeft");
-		while(RobotMap.digitalInput0.get()==true) {
-			pawlLeft.set(-1*Constants.pawlSpeed);
-		}
-			pawlLeft.set(0);
-			finished = true;	
+		pawlLeft.set(-1*Constants.pawlSpeed);	
 	}
 	protected boolean isFinished() {
-		return finished;
+		return !(RobotMap.digitalInput0.get());
 	}
 	
 	protected void interrupted() {
 		end();
+	}
+	
+	protected void end() {
+		pawlLeft.set(0);
 	}
 }
