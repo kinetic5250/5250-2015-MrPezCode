@@ -1,4 +1,4 @@
-package org.usfirst.frc.team5250.robot.commands.Pawl;
+package org.usfirst.frc.team5250.robot.commands.pawl;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 

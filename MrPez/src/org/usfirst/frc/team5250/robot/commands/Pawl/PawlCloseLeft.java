@@ -1,4 +1,4 @@
-package org.usfirst.frc.team5250.robot.commands.Pawl;
+package org.usfirst.frc.team5250.robot.commands.pawl;
 
 import org.usfirst.frc.team5250.robot.Constants;
 import org.usfirst.frc.team5250.robot.RobotMap;

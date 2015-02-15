@@ -5,10 +5,10 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Joystick;
 
-import org.usfirst.frc.team5250.robot.commands.PawlTest;
-import org.usfirst.frc.team5250.robot.commands.PezTest;
-import org.usfirst.frc.team5250.robot.commands.Pawl.PawlOpen;
-import org.usfirst.frc.team5250.robot.commands.Pawl.PawlClose;
+import org.usfirst.frc.team5250.robot.commands.pawl.PawlClose;
+import org.usfirst.frc.team5250.robot.commands.pawl.PawlOpen;
+import org.usfirst.frc.team5250.robot.commands.test.PawlTest;
+import org.usfirst.frc.team5250.robot.commands.test.PezTest;
 
 /**
  * This class is the glue that binds the controls on the physical operator

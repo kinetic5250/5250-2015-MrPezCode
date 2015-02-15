@@ -1,4 +1,4 @@
-package org.usfirst.frc.team5250.robot.subsystems.Pawl;
+package org.usfirst.frc.team5250.robot.subsystems.pawl;
 
 import org.usfirst.frc.team5250.robot.RobotMap;
 //import org.usfirst.frc.team5250.robot.commands.PawlTest;

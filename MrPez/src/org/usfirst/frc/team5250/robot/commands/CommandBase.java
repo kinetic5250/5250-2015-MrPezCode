@@ -4,10 +4,11 @@ import edu.wpi.first.wpilibj.command.Command;
 
 
 
+
 //import org.usfirst.frc.team5250.robot.Robot;
 import org.usfirst.frc.team5250.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team5250.robot.subsystems.Pawl.PawlLeft;
-import org.usfirst.frc.team5250.robot.subsystems.Pawl.PawlRight;
+import org.usfirst.frc.team5250.robot.subsystems.pawl.PawlLeft;
+import org.usfirst.frc.team5250.robot.subsystems.pawl.PawlRight;
 import org.usfirst.frc.team5250.robot.subsystems.Pez;
 
 
