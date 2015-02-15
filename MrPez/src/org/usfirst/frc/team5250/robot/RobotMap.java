@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.AnalogInput;
 
 
 /**
@@ -34,6 +35,7 @@ public class RobotMap {
 	public static DigitalInput digitalInput1;
 	public static DigitalInput digitalInput2;
 	public static DigitalInput digitalInput3;
+	public static AnalogInput analogInput0;
 	
 	public static void init() {
 		
@@ -52,9 +54,10 @@ public class RobotMap {
 		talon1 = new Talon(1); //Pawl right w/ limit switches
 		talon2 = new Talon(2); //Claw w/ limit switches
 		
-		digitalInput0 = new DigitalInput(0);
-		digitalInput1 = new DigitalInput(1);
-		digitalInput2 = new DigitalInput(2);
-		digitalInput3 = new DigitalInput(3);
+		digitalInput0 = new DigitalInput(0);//Left open
+		digitalInput1 = new DigitalInput(1);//Left close
+		digitalInput2 = new DigitalInput(2);//Right open
+		digitalInput3 = new DigitalInput(3);//Right close
+		analogInput0 = new AnalogInput(0);
 	}
 }

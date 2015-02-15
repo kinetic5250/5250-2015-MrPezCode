@@ -1,7 +1,7 @@
 package org.usfirst.frc.team5250.robot.subsystems;
 
 import org.usfirst.frc.team5250.robot.RobotMap;
-import org.usfirst.frc.team5250.robot.commands.Pawl.PawlOpen;
+import org.usfirst.frc.team5250.robot.commands.PawlTest;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -21,6 +21,6 @@ public class Pawl extends Subsystem {
 	}
 	
 	protected void initDefaultCommand() {
-		setDefaultCommand(new PawlOpen());
+		setDefaultCommand(new PawlTest());
 	}
 }

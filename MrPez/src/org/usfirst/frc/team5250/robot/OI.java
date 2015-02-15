@@ -5,8 +5,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Joystick;
 
-import org.usfirst.frc.team5250.robot.commands.Pawl.PawlOpen;
-import org.usfirst.frc.team5250.robot.commands.Pawl.PawlClose;
+import org.usfirst.frc.team5250.robot.commands.Pawl.PawlOpenRight;
+import org.usfirst.frc.team5250.robot.commands.Pawl.PawlCloseRight;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -43,14 +43,16 @@ public class OI {
 
 	public static Joystick joystick0;
 	public static CameraServer cameraServer;
-	public static Button button4;	
+	public static Button button5;
+	public static Button button6;
 	
 	public static void init() {
 		joystick0 = new Joystick(0);
 		cameraServer = CameraServer.getInstance();
     	cameraServer.startAutomaticCapture("cam0");
-    	button4 = new JoystickButton(joystick0, 4);
-    	button4.whenPressed(new PawlOpen());
-    	button4.whenReleased(new PawlClose());
+    	button5 = new JoystickButton(joystick0, 5);
+    	button6 = new JoystickButton(joystick0, 6);
+    	button5.whenPressed(new PawlOpenRight());
+    	button6.whenPressed(new PawlCloseRight());
 	}
 }

@@ -2,7 +2,7 @@ package org.usfirst.frc.team5250.robot.subsystems;
 
 
 import org.usfirst.frc.team5250.robot.RobotMap;
-import org.usfirst.frc.team5250.robot.commands.PezDefault;
+import org.usfirst.frc.team5250.robot.commands.PezTest;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.CANJaguar;
@@ -36,6 +36,6 @@ public class Pez extends Subsystem {
 	
 	
     public void initDefaultCommand() {
-    	setDefaultCommand(new PezDefault());
+    	setDefaultCommand(new PezTest());
     }
 }
