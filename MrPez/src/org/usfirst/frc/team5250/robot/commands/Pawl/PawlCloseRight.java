@@ -8,15 +8,15 @@ public class PawlCloseRight extends CommandBase {
 	boolean finished = false;
 	
 	public PawlCloseRight() {
-		requires(pawl);
+		requires(pawlRight);
 	}
 	
 	protected void execute() {
-		System.out.println("PawlClose");
+		System.out.println("PawlCloseRight");
 		while(RobotMap.digitalInput3.get()==true) {
-			pawl.setRightPawl(-1*Constants.pawlSpeed);
+			pawlRight.set(-1*Constants.pawlSpeed);
 		}
-		pawl.setRightPawl(0);
+		pawlRight.set(0);
 		finished = true;
 	}
 	protected boolean isFinished() {

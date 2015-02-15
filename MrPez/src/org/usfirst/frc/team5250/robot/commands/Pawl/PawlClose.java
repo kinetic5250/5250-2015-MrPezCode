@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class PawlClose extends CommandGroup {
 	public PawlClose() {
-		addSequential(new PawlCloseLeft());
+		addParallel(new PawlCloseLeft());
 		addParallel(new PawlCloseRight());
 	}
 }

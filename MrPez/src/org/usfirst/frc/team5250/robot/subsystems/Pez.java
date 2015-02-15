@@ -6,7 +6,6 @@ import org.usfirst.frc.team5250.robot.commands.PezTest;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.CANJaguar;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Pez extends Subsystem {
 	double currentPosition = 0.0;
@@ -18,19 +17,16 @@ public class Pez extends Subsystem {
 	
 	public double zeroPezPosition() {
 		RobotMap.canJaguar25.set(0);
-		SmartDashboard.putNumber("PezSetPosition", 0.0);
 		return 0.0;
 	}
 	
 	public double setPezPosition(double position) {
 		RobotMap.canJaguar25.set(position);
-		SmartDashboard.putNumber("PezSetPosition", position);
 		return position;
 	}
 	
 	public double getPezPosition() {
 		currentPosition = RobotMap.canJaguar25.getPosition();
-		SmartDashboard.putNumber("PezSetPosition", currentPosition);
 		return currentPosition;
 	}
 	
