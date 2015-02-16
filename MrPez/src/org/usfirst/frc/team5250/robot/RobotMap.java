@@ -2,20 +2,12 @@ package org.usfirst.frc.team5250.robot;
 
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
-import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.AnalogInput;
 
-/**
- * The RobotMap is a mapping from the ports sensors and actuators are wired into
- * to a variable name. This provides flexibility changing wiring, makes checking
- * the wiring easier and significantly reduces the number of magic numbers
- * floating around.
- */
 public class RobotMap {
 	
-	public static PowerDistributionPanel powerDistributionPanel0;
 	public static CANJaguar canJaguar21;
 	public static CANJaguar canJaguar22;
 	public static CANJaguar canJaguar23;
@@ -39,7 +31,6 @@ public class RobotMap {
 	
 	public static void init() {
 		
-		powerDistributionPanel0 = new PowerDistributionPanel();
 		canJaguar21 = new CANJaguar(21); //left front
 		canJaguar22 = new CANJaguar(22); //right front
 		canJaguar23 = new CANJaguar(23); //left rear
@@ -58,6 +49,7 @@ public class RobotMap {
 		digitalInput1 = new DigitalInput(1);//Left close
 		digitalInput2 = new DigitalInput(2);//Right open
 		digitalInput3 = new DigitalInput(3);//Right close
+		
 		analogInput0 = new AnalogInput(0);
 	}
 }
