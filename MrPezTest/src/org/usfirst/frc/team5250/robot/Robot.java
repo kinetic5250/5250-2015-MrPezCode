@@ -10,7 +10,6 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Jaguar;
-
 import java.lang.Math;
 
 public class Robot extends IterativeRobot {
@@ -34,6 +33,8 @@ public class Robot extends IterativeRobot {
 	public static DigitalInput digitalInput2;
 	public static DigitalInput digitalInput3;
 	
+	public static AnalogInput analogInput0;
+	
 	public static Joystick joystick0;
 	public static CameraServer cameraServer;
 	
@@ -49,14 +50,17 @@ public class Robot extends IterativeRobot {
 		
 		robotDrive = new RobotDrive(canJaguar21, canJaguar23, canJaguar22, canJaguar24); //Basic DriveTrain
 		
+		canJaguar25.setPositionMode(CANJaguar.kQuadEncoder, 1, 10.0, 0, 0);
+		//canJaguar25.setPositionMode(tag, codesPerRev, p, i, d);
+		
 		talon0 = new Talon(0); //Pawl left w/ limit switches
 		talon1 = new Talon(1); //Pawl right w/ limit switches
 		talon2 = new Talon(2); //Claw w/ limit switches
 		
-		digitalInput0 = new DigitalInput(0);//Left open
-		digitalInput1 = new DigitalInput(1);//Left close
-		digitalInput2 = new DigitalInput(2);//Right open
-		digitalInput3 = new DigitalInput(3);//Right close
+		digitalInput0 = new DigitalInput(0); //Left open
+		digitalInput1 = new DigitalInput(1); //Left close
+		digitalInput2 = new DigitalInput(2); //Right open
+		digitalInput3 = new DigitalInput(3); //Right close
 		
     	joystick0 = new Joystick(0);
 		cameraServer = CameraServer.getInstance();
@@ -64,17 +68,19 @@ public class Robot extends IterativeRobot {
     }
     
     public void teleopPeriodic() {
-    	/* NOTE: Warning
-
-		When using the IterativeRobot as your Robot class, you should avoid doing the following operations in the xxxPeriodic functions or 
-		functions that have xxxPeriodic in the call stack:
-
-		Never use Timer.delay as you will momentarily lose control of your robot during the delay, and it will not be as responsive.
-		Avoid using loops, as unexpected conditions may cause you to lose control of your robot.
-    	*/
-		
-		//most Java.lang.Math params require long types
-		
+		long counter=0;
+    	long feet=0;
+    	long inch=0;
+    	double currentPosition = 0.0;
+    	//double timeFPGAinSec;
+    	//double timeFPGAinMilSec;
+    	robotDrive.setSafetyEnabled(true);
+    	while (isOperatorControl() && isEnabled()) {
+        	//timeFPGAinSec=Timer.getFPGATimestamp();
+        	//timeFPGAinMilSec=1000*timeFPGAinSec;
+    		currentPosition = canJaguar25.getPosition();
+    		canJaguar25.set(currentPosition+joystick0.getRawAxis(4));
+        }
     }
     
     public void testPeriodic() {}
