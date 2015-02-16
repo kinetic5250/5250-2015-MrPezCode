@@ -27,6 +27,7 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		RobotMap.init();
 		OI.init();
+		Dashboard.init();
         // instantiate the command used for the autonomous period
         sendableChooser = new SendableChooser();
         sendableChooser.addDefault("Autocommand", new AutoCommand());

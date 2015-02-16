@@ -71,15 +71,15 @@ public class Robot extends IterativeRobot {
 		long counter=0;
     	long feet=0;
     	long inch=0;
-    	double currentPosition = 0.0;
+    	//double currentPosition = 0.0;
     	//double timeFPGAinSec;
     	//double timeFPGAinMilSec;
     	robotDrive.setSafetyEnabled(true);
     	while (isOperatorControl() && isEnabled()) {
         	//timeFPGAinSec=Timer.getFPGATimestamp();
         	//timeFPGAinMilSec=1000*timeFPGAinSec;
-    		currentPosition = canJaguar25.getPosition();
-    		canJaguar25.set(currentPosition+joystick0.getRawAxis(4));
+    		//currentPosition = canJaguar25.getPosition();
+    		talon0.set(joystick0.getRawAxis(4));
         }
     }
     
