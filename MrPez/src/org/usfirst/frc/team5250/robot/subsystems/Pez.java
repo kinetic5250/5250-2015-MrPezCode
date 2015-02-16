@@ -2,8 +2,6 @@ package org.usfirst.frc.team5250.robot.subsystems;
 
 
 import org.usfirst.frc.team5250.robot.RobotMap;
-import org.usfirst.frc.team5250.robot.commands.test.PezTest;
-
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.CANJaguar;
 
@@ -11,7 +9,7 @@ public class Pez extends Subsystem {
 	double currentPosition = 0.0;
 	
 	public Pez() {
-		RobotMap.canJaguar25.setPositionMode(CANJaguar.kQuadEncoder, 1, 10.0	, 0, 0);
+		RobotMap.canJaguar25.setPositionMode(CANJaguar.kQuadEncoder, 1, 10.0, 0, 0);
 		RobotMap.canJaguar25.enableControl();
 	}
 	
@@ -30,8 +28,5 @@ public class Pez extends Subsystem {
 		return currentPosition;
 	}
 	
-	
-    public void initDefaultCommand() {
-    	setDefaultCommand(new PezTest());
-    }
+    public void initDefaultCommand() {}
 }

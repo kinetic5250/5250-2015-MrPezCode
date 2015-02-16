@@ -28,6 +28,6 @@ public class Dashboard {
 		SmartDashboard.putBoolean("DigitalInput1", RobotMap.digitalInput1.get());
 		SmartDashboard.putBoolean("DigitalInput2", RobotMap.digitalInput2.get());
 		SmartDashboard.putBoolean("DigitalInput3", RobotMap.digitalInput3.get());
-		
+		SmartDashboard.putNumber("AnalogInput0", RobotMap.analogInput0.getAverageVoltage());
 	}
 }
