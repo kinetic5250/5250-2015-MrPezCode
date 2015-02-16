@@ -1,47 +1,66 @@
 package org.usfirst.frc.team5250.robot;
 
+import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Jaguar;
 
-
-
 import java.lang.Math;
 
 public class Robot extends IterativeRobot {
-    
-	Talon talon0; // rearLeft motor
-	Talon talon1; // rearRight motor
-	Jaguar jaguar3;
-	RobotDrive robotDrive;
-	Joystick joystick1;
-	CameraServer cameraServer0;
-	DigitalInput digitalInput0;
-	AnalogInput analogInput0;
+	public static PowerDistributionPanel powerDistributionPanel0;
+	public static CANJaguar canJaguar21;
+	public static CANJaguar canJaguar22;
+	public static CANJaguar canJaguar23;
+	public static CANJaguar canJaguar24;
+	public static CANJaguar canJaguar25;
+	public static CANJaguar canJaguar26;
+	public static CANJaguar canJaguar27;
+	
+	public static RobotDrive robotDrive;
+	
+	public static Talon talon0;
+	public static Talon talon1;
+	public static Talon talon2;
+	
+	public static DigitalInput digitalInput0;
+	public static DigitalInput digitalInput1;
+	public static DigitalInput digitalInput2;
+	public static DigitalInput digitalInput3;
+	
+	public static Joystick joystick0;
+	public static CameraServer cameraServer;
 	
     public void robotInit() {
-    	talon0 = new Talon(0);
-    	talon1 = new Talon(1);
-    	jaguar3 = new Jaguar(3);
-		robotDrive = new RobotDrive(talon0,talon1);
-    	robotDrive.setExpiration(0.1);
-    	robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft,true);
-    	robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight,true);
-    	joystick1= new Joystick(0);
-    	//Joystick stick2 = new Joystick(1);
-    	cameraServer0 = CameraServer.getInstance();
-    	cameraServer0.setQuality(25);
-    	cameraServer0.startAutomaticCapture("cam0");
-    	digitalInput0 = new DigitalInput(0); //Hall Effect Sensor
-    	analogInput0 = new AnalogInput(0); //Sonar
+    	powerDistributionPanel0 = new PowerDistributionPanel();
+		canJaguar21 = new CANJaguar(21); //left front
+		canJaguar22 = new CANJaguar(22); //right front
+		canJaguar23 = new CANJaguar(23); //left rear
+		canJaguar24 = new CANJaguar(24); //right rear
+		canJaguar25 = new CANJaguar(25); //Pez
+		canJaguar26 = new CANJaguar(26); //Arm Mover
+		canJaguar27 = new CANJaguar(27); //Claw Mover
+		
+		robotDrive = new RobotDrive(canJaguar21, canJaguar23, canJaguar22, canJaguar24); //Basic DriveTrain
+		
+		talon0 = new Talon(0); //Pawl left w/ limit switches
+		talon1 = new Talon(1); //Pawl right w/ limit switches
+		talon2 = new Talon(2); //Claw w/ limit switches
+		
+		digitalInput0 = new DigitalInput(0);//Left open
+		digitalInput1 = new DigitalInput(1);//Left close
+		digitalInput2 = new DigitalInput(2);//Right open
+		digitalInput3 = new DigitalInput(3);//Right close
+		
+    	joystick0 = new Joystick(0);
+		cameraServer = CameraServer.getInstance();
+    	cameraServer.startAutomaticCapture("cam0");
     }
     
     public void teleopPeriodic() {
@@ -55,24 +74,7 @@ public class Robot extends IterativeRobot {
     	*/
 		
 		//most Java.lang.Math params require long types
-		long counter=0;
-    	long feet=0;
-    	long inch=0;
-    	//double timeFPGAinSec;
-    	//double timeFPGAinMilSec;
-    	robotDrive.setSafetyEnabled(true);
-    	while (isOperatorControl() && isEnabled()) {
-        	//timeFPGAinSec=Timer.getFPGATimestamp();
-        	//timeFPGAinMilSec=1000*timeFPGAinSec;
-            robotDrive.arcadeDrive(joystick1);
-			jaguar3.set(joystick1.getRawAxis(4));
-            if((counter%1000)==1) {
-            	feet=Math.round(analogInput0.getAverageVoltage()*1000/9.766)/12;
-                inch=Math.round(analogInput0.getAverageVoltage()*1000/9.766)%12;
-            	System.out.println("Hall Effect: "+digitalInput0.get()+feet+" feet "+inch+" inch ");
-            }
-            counter++;
-        }
+		
     }
     
     public void testPeriodic() {}
