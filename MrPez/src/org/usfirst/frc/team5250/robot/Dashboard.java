@@ -1,13 +1,18 @@
 package org.usfirst.frc.team5250.robot;
 
 import org.usfirst.frc.team5250.robot.RobotMap;
-//import org.usfirst.frc.team5250.robot.OI;
+
+import org.usfirst.frc.team5250.robot.subsystems.Pez;
 
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
 
 	
 public class Dashboard {
 	static NetworkTable networkTable;
+	
+	static double pezP = 0.0;
+	static double pezI = 0.0;
+	static double pezD = 0.0;
 	
 	public static void init() {
 		networkTable = NetworkTable.getTable("datatable");
@@ -34,5 +39,7 @@ public class Dashboard {
 		networkTable.putBoolean("digitalInput2", RobotMap.digitalInput2.get());
 		networkTable.putBoolean("digitalInput3", RobotMap.digitalInput3.get());
 		networkTable.putNumber("analogInput0", RobotMap.analogInput0.getAverageVoltage());
+		networkTable.putNumber("pezGoalPosition", Pez.goalPosition);
+		networkTable.putNumber("pezCurrentPosition", RobotMap.canJaguar25.getPosition());
 	}
 }
