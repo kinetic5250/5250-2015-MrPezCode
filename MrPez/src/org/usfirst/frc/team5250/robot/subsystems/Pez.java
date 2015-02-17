@@ -31,6 +31,6 @@ public class Pez extends Subsystem {
 	}
 
     public void initDefaultCommand() {
-    	//setDefaultCommand(new PezDefault());
+    	setDefaultCommand(new PezDefault());
     }
 }
