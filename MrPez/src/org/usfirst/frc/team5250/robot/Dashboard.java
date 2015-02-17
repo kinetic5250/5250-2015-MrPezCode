@@ -19,7 +19,7 @@ public class Dashboard {
 	}
 	
 	public static void read() {
-		networkTable.putNumber("jaguar21Speed", RobotMap.canJaguar21.get());
+		/*networkTable.putNumber("jaguar21Speed", RobotMap.canJaguar21.get());
 		networkTable.putNumber("jaguar22Speed", RobotMap.canJaguar22.get());
 		networkTable.putNumber("jaguar23Speed", RobotMap.canJaguar23.get());
 		networkTable.putNumber("jaguar24Speed", RobotMap.canJaguar24.get());
@@ -33,13 +33,13 @@ public class Dashboard {
 		networkTable.putNumber("jaguar22Voltage", RobotMap.canJaguar22.getOutputVoltage());
 		networkTable.putNumber("jaguar23Voltage", RobotMap.canJaguar23.getOutputVoltage());
 		networkTable.putNumber("jaguar24Voltage", RobotMap.canJaguar24.getOutputVoltage());
-		networkTable.putNumber("jaguar25Position", RobotMap.canJaguar25.getPosition());
+		//networkTable.putNumber("jaguar25Position", RobotMap.canJaguar25.getPosition());*/
 		networkTable.putBoolean("digitalInput0", RobotMap.digitalInput0.get());
 		networkTable.putBoolean("digitalInput1", RobotMap.digitalInput1.get());
 		networkTable.putBoolean("digitalInput2", RobotMap.digitalInput2.get());
 		networkTable.putBoolean("digitalInput3", RobotMap.digitalInput3.get());
 		networkTable.putNumber("analogInput0", RobotMap.analogInput0.getAverageVoltage());
 		networkTable.putNumber("pezGoalPosition", Pez.goal);
-		networkTable.putNumber("pezCurrentPosition", RobotMap.canJaguar25.getPosition());
+		networkTable.putNumber("pezCurrentPosition", RobotMap.canJaguar25.get());
 	}
 }

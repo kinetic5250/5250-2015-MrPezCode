@@ -74,7 +74,7 @@ public class Robot extends IterativeRobot {
 	double goalPosition;
     
 	public void teleopInit() {
-		canJaguar25.enableControl();
+		System.out.println("Test Code for Arm");
 	}
 	
     public void teleopPeriodic() {
@@ -83,10 +83,12 @@ public class Robot extends IterativeRobot {
     	//double timeFPGAinMilSec;
         //timeFPGAinSec=Timer.getFPGATimestamp();
         //timeFPGAinMilSec=1000*timeFPGAinSec;
-    	currentPosition = canJaguar25.getPosition();
-    	goalPosition = 5*joystick0.getRawAxis(4);
-    	canJaguar25.set(goalPosition);
-    	System.out.println(currentPosition + " " + goalPosition);
+    	//currentPosition = canJaguar25.getPosition();
+    	//goalPosition = 5*joystick0.getRawAxis(4);
+    	//canJaguar25.set(goalPosition);
+    	//System.out.println(currentPosition + " " + goalPosition);
+    	talon0.set(joystick0.getRawAxis(5));
+    	System.out.println(joystick0.getRawButton(5));
     }
     
     public void testPeriodic() {}

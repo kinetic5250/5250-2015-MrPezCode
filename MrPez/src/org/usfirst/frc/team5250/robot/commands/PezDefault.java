@@ -1,6 +1,7 @@
 package org.usfirst.frc.team5250.robot.commands;
 
 import org.usfirst.frc.team5250.robot.OI;
+import org.usfirst.frc.team5250.robot.RobotMap;
 
 public class PezDefault extends CommandBase {
 	public PezDefault() {
@@ -12,7 +13,7 @@ public class PezDefault extends CommandBase {
 	}
 	
 	protected void execute() {
-		pez.setPez(OI.joystick0.getRawAxis(5));
+		RobotMap.canJaguar25.set(OI.joystick0.getRawAxis(5));
 	}
 	
 	protected boolean isFinished() {
