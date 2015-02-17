@@ -39,7 +39,7 @@ public class Dashboard {
 		networkTable.putBoolean("digitalInput2", RobotMap.digitalInput2.get());
 		networkTable.putBoolean("digitalInput3", RobotMap.digitalInput3.get());
 		networkTable.putNumber("analogInput0", RobotMap.analogInput0.getAverageVoltage());
-		networkTable.putNumber("pezGoalPosition", Pez.goalPosition);
+		networkTable.putNumber("pezGoalPosition", Pez.goal);
 		networkTable.putNumber("pezCurrentPosition", RobotMap.canJaguar25.getPosition());
 	}
 }

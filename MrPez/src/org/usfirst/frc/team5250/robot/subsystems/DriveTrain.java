@@ -4,7 +4,7 @@ import org.usfirst.frc.team5250.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-import org.usfirst.frc.team5250.robot.commands.DriveTrainDefault;
+import org.usfirst.frc.team5250.robot.commands.Drive;
 
 public class DriveTrain extends Subsystem {
 	
@@ -23,7 +23,7 @@ public class DriveTrain extends Subsystem {
 	}
 	
     public void initDefaultCommand() {
-    	setDefaultCommand(new DriveTrainDefault());
+    	//setDefaultCommand(new Drive());
     }
 }
 
