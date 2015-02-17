@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.AnalogInput;
-import edu.wpi.first.wpilibj.Jaguar;
 import java.lang.Math;
 
 public class Robot extends IterativeRobot {
@@ -22,7 +21,7 @@ public class Robot extends IterativeRobot {
 	public static CANJaguar canJaguar26;
 	public static CANJaguar canJaguar27;
 	
-	public static RobotDrive robotDrive;
+	//public static RobotDrive robotDrive;
 	
 	public static Talon talon0;
 	public static Talon talon1;
@@ -48,9 +47,10 @@ public class Robot extends IterativeRobot {
 		canJaguar26 = new CANJaguar(26); //Arm Mover
 		canJaguar27 = new CANJaguar(27); //Claw Mover
 		
-		robotDrive = new RobotDrive(canJaguar21, canJaguar23, canJaguar22, canJaguar24); //Basic DriveTrain
+		//robotDrive = new RobotDrive(canJaguar21, canJaguar23, canJaguar22, canJaguar24); //Basic DriveTrain
 		
-		canJaguar25.setPositionMode(CANJaguar.kQuadEncoder, 1, 10.0, 0, 0);
+		
+		canJaguar25.setPositionMode(CANJaguar.kQuadEncoder, 497, -200, 0.005,15);
 		//canJaguar25.setPositionMode(tag, codesPerRev, p, i, d);
 		
 		talon0 = new Talon(0); //Pawl left w/ limit switches
@@ -67,20 +67,26 @@ public class Robot extends IterativeRobot {
     	cameraServer.startAutomaticCapture("cam0");
     }
     
+    long counter=0;
+	long feet=0;
+	long inch=0;
+	double currentPosition;
+	double goalPosition;
+    
+	public void teleopInit() {
+		canJaguar25.enableControl();
+	}
+	
     public void teleopPeriodic() {
-		long counter=0;
-    	long feet=0;
-    	long inch=0;
     	//double currentPosition = 0.0;
     	//double timeFPGAinSec;
     	//double timeFPGAinMilSec;
-    	robotDrive.setSafetyEnabled(true);
-    	while (isOperatorControl() && isEnabled()) {
-        	//timeFPGAinSec=Timer.getFPGATimestamp();
-        	//timeFPGAinMilSec=1000*timeFPGAinSec;
-    		//currentPosition = canJaguar25.getPosition();
-    		talon0.set(joystick0.getRawAxis(4));
-        }
+        //timeFPGAinSec=Timer.getFPGATimestamp();
+        //timeFPGAinMilSec=1000*timeFPGAinSec;
+    	currentPosition = canJaguar25.getPosition();
+    	goalPosition = 5*joystick0.getRawAxis(4);
+    	canJaguar25.set(goalPosition);
+    	System.out.println(currentPosition + " " + goalPosition);
     }
     
     public void testPeriodic() {}
