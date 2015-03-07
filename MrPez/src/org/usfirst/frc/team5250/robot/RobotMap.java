@@ -13,8 +13,6 @@ public class RobotMap {
 	public static CANJaguar canJaguar23;
 	public static CANJaguar canJaguar24;
 	public static CANJaguar canJaguar25;
-	public static CANJaguar canJaguar26;
-	public static CANJaguar canJaguar27;
 	
 	public static RobotDrive robotDrive;
 	
@@ -36,8 +34,6 @@ public class RobotMap {
 		canJaguar23 = new CANJaguar(23); //left rear
 		canJaguar24 = new CANJaguar(24); //right rear
 		canJaguar25 = new CANJaguar(25); //Pez
-		canJaguar26 = new CANJaguar(26); //Arm Mover
-		canJaguar27 = new CANJaguar(27); //Claw Mover
 		
 		robotDrive = new RobotDrive(canJaguar21, canJaguar23, canJaguar22, canJaguar24); //Basic DriveTrain
 		
@@ -51,5 +47,17 @@ public class RobotMap {
 		digitalInput3 = new DigitalInput(3);//Right close
 		
 		analogInput0 = new AnalogInput(0);
+
+		canJaguar21.setVoltageRampRate(Constants.driveTrainRampRate);
+		canJaguar22.setVoltageRampRate(Constants.driveTrainRampRate);
+		canJaguar23.setVoltageRampRate(Constants.driveTrainRampRate);
+		canJaguar24.setVoltageRampRate(Constants.driveTrainRampRate);
+		
+		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+		robotDrive.isSafetyEnabled();
+		robotDrive.setExpiration(200);
 	}
 }

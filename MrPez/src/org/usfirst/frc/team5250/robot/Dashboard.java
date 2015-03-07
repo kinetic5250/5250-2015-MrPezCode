@@ -14,17 +14,20 @@ public class Dashboard {
 	static double pezI = 0.0;
 	static double pezD = 0.0;
 	
+	public static double setPezValue = 0.0;
+	
 	public static void init() {
 		networkTable = NetworkTable.getTable("datatable");
 	}
 	
 	public static void read() {
-		/*networkTable.putNumber("jaguar21Speed", RobotMap.canJaguar21.get());
+		networkTable.putNumber("jaguar21Speed", RobotMap.canJaguar21.get());
 		networkTable.putNumber("jaguar22Speed", RobotMap.canJaguar22.get());
 		networkTable.putNumber("jaguar23Speed", RobotMap.canJaguar23.get());
 		networkTable.putNumber("jaguar24Speed", RobotMap.canJaguar24.get());
-		networkTable.putNumber("jaguar25Speed", RobotMap.canJaguar25.get());
-		networkTable.putNumber("jaguar26Speed", RobotMap.canJaguar26.get());
+		networkTable.putNumber("jaguar25Position", RobotMap.canJaguar25.getPosition());
+		System.out.println(RobotMap.canJaguar21.get()+RobotMap.canJaguar22.get()+RobotMap.canJaguar23.get()+RobotMap.canJaguar24.get());
+		/*networkTable.putNumber("jaguar26Speed", RobotMap.canJaguar26.get());
 		networkTable.putNumber("jaguar27Speed", RobotMap.canJaguar27.get());
 		networkTable.putNumber("talon0Speed", RobotMap.talon0.get());
 		networkTable.putNumber("talon1Speed", RobotMap.talon1.get());
@@ -38,8 +41,8 @@ public class Dashboard {
 		networkTable.putBoolean("digitalInput1", RobotMap.digitalInput1.get());
 		networkTable.putBoolean("digitalInput2", RobotMap.digitalInput2.get());
 		networkTable.putBoolean("digitalInput3", RobotMap.digitalInput3.get());
-		networkTable.putNumber("analogInput0", RobotMap.analogInput0.getAverageVoltage());
+		//networkTable.putNumber("analogInput0", RobotMap.analogInput0.getAverageVoltage());
 		networkTable.putNumber("pezGoalPosition", Pez.goal);
-		networkTable.putNumber("pezCurrentPosition", RobotMap.canJaguar25.get());
+		networkTable.putNumber("pezCurrentPosition", RobotMap.canJaguar25.getPosition());
 	}
 }
