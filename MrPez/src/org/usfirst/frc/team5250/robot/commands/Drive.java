@@ -19,8 +19,12 @@ public class Drive extends CommandBase {
 	}
 	
 	protected void execute() {
-		joystickXAxis = Util.calculateDeadband(OI.joystick0.getRawAxis(0), Constants.driveTrainDeadband);
-		joystickYAxis = Util.calculateDeadband(OI.joystick0.getRawAxis(1), Constants.driveTrainDeadband);
+		joystickXAxis = Util.calculateDeadband(
+				OI.joystick0.getRawAxis(Constants.XBoxAxisType.kLeftX),
+				Constants.driveTrainDeadband);
+		joystickYAxis = Util.calculateDeadband(
+				OI.joystick0.getRawAxis(Constants.XBoxAxisType.kLeftY), 
+				Constants.driveTrainDeadband);
 		XOutput = (joystickXAxis>0)?Math.pow(Math.abs(joystickXAxis),Constants.driveTrainExponent):
 				    Math.pow(Math.abs(joystickXAxis),Constants.driveTrainExponent)*-1;
 		YOutput = joystickYAxis;

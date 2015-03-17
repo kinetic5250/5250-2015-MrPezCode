@@ -1,17 +1,39 @@
 package org.usfirst.frc.team5250.robot;
 
-public class Constants {
+public final class Constants {
 	public static final double driveTrainExponent = 2.174;
-	public static final double driveTrainRampRate = 12.0;
-	public static final double driveTrainDeadband = 0;
+	public static final double driveTrainRampRate = 14.0;
+	public static final double driveTrainDeadband = 0.05;
 	public static final double ultraSonicConstant = 0.098;
 	
 	public static final double pawlSpeed = 0.200;
-	public static final double pezP = 0.0;
-	public static final double pezI = 0.0;
-	public static final double pezD = 0.0;
-	public static final int pezCodesPerRev = 497;
 	
-	//ground is 0 catch pos about 12 two totes in the pez about 15, one tote in the pez about 27, top is 39
+	public static final double kPezDeadband = 0.1;
+	public static final double kPezP = 100.0;
+	public static final double kPezI = 0.0;
+	public static final double kPezD = 0.0;
+	public static final int kPezCodesPerRev = 497;
 	public static final double pezBottomPosition = 0.0;
+	
+	public final class XBoxAxisType {
+		public static final int kLeftX = 0;
+		public static final int kLeftY = 1;
+		public static final int kLeftTrigger = 2;
+		public static final int kRightTrigger = 3;
+		public static final int kRightX = 4;
+		public static final int kRightY = 5;
+	}
+	
+	public final class XBoxButtonType {
+		public static final int kAButton = 1;
+		public static final int kBButton = 2;
+		public static final int kXButton = 3;
+		public static final int kYButton = 4;
+		public static final int kLeftBumper = 5;
+		public static final int kRightBumper = 6;
+		public static final int kBackButton = 7;
+		public static final int kStartButton = 8;
+		public static final int kLeftStickButton = 9;
+		public static final int kRightStickButton = 10;
+	}
 }

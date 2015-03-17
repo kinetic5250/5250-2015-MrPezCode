@@ -3,13 +3,13 @@ package org.usfirst.frc.team5250.robot;
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
-import edu.wpi.first.wpilibj.RobotDrive;
+//import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.AnalogInput;
-import java.lang.Math;
+//import java.lang.Math;
 
 public class Robot extends IterativeRobot {
 	public static PowerDistributionPanel powerDistributionPanel0;
@@ -38,22 +38,18 @@ public class Robot extends IterativeRobot {
 	public static CameraServer cameraServer;
 	
     public void robotInit() {
-    	powerDistributionPanel0 = new PowerDistributionPanel();
+    	/*powerDistributionPanel0 = new PowerDistributionPanel();
 		canJaguar21 = new CANJaguar(21); //left front
 		canJaguar22 = new CANJaguar(22); //right front
 		canJaguar23 = new CANJaguar(23); //left rear
 		canJaguar24 = new CANJaguar(24); //right rear
 		canJaguar25 = new CANJaguar(25); //Pez
-		canJaguar26 = new CANJaguar(26); //Arm Mover
+		canJaguar26 = new CANJaguar(26); //Arm Mover*/
 		canJaguar27 = new CANJaguar(27); //Claw Mover
 		
 		//robotDrive = new RobotDrive(canJaguar21, canJaguar23, canJaguar22, canJaguar24); //Basic DriveTrain
 		
-		
-		canJaguar25.setPositionMode(CANJaguar.kQuadEncoder, 497, -200, 0.005,15);
-		//canJaguar25.setPositionMode(tag, codesPerRev, p, i, d);
-		
-		talon0 = new Talon(0); //Pawl left w/ limit switches
+		/*talon0 = new Talon(0); //Pawl left w/ limit switches
 		talon1 = new Talon(1); //Pawl right w/ limit switches
 		talon2 = new Talon(2); //Claw w/ limit switches
 		
@@ -61,10 +57,10 @@ public class Robot extends IterativeRobot {
 		digitalInput1 = new DigitalInput(1); //Left close
 		digitalInput2 = new DigitalInput(2); //Right open
 		digitalInput3 = new DigitalInput(3); //Right close
-		
+		*/
     	joystick0 = new Joystick(0);
-		cameraServer = CameraServer.getInstance();
-    	cameraServer.startAutomaticCapture("cam0");
+		/*cameraServer = CameraServer.getInstance();
+    	cameraServer.startAutomaticCapture("cam0");*/
     }
     
     long counter=0;
@@ -78,6 +74,9 @@ public class Robot extends IterativeRobot {
 	}
 	
     public void teleopPeriodic() {
+    	canJaguar27.setPositionMode(CANJaguar.kQuadEncoder, 497, 200, 0.005,15);
+		//canJaguar25.setPositionMode(tag, codesPerRev, p, i, d);
+		canJaguar27.enableControl();
     	//double currentPosition = 0.0;
     	//double timeFPGAinSec;
     	//double timeFPGAinMilSec;
@@ -87,8 +86,8 @@ public class Robot extends IterativeRobot {
     	//goalPosition = 5*joystick0.getRawAxis(4);
     	//canJaguar25.set(goalPosition);
     	//System.out.println(currentPosition + " " + goalPosition);
-    	talon0.set(joystick0.getRawAxis(5));
-    	System.out.println(joystick0.getRawButton(5));
+    	canJaguar27.set(joystick0.getRawAxis(5));
+    	System.out.println(joystick0.getRawAxis(5));
     }
     
     public void testPeriodic() {}

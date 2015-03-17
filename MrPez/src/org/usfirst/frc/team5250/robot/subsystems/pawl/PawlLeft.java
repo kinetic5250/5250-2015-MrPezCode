@@ -13,6 +13,5 @@ public class PawlLeft extends Subsystem {
 	}
 	
 	protected void initDefaultCommand() {
-		//setDefaultCommand(new PawlTest());
 	}
 }

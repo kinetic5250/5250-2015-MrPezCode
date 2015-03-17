@@ -39,7 +39,6 @@ public class RobotMap {
 		
 		talon0 = new Talon(0); //Pawl left w/ limit switches
 		talon1 = new Talon(1); //Pawl right w/ limit switches
-		talon2 = new Talon(2); //Claw w/ limit switches
 		
 		digitalInput0 = new DigitalInput(0);//Left open
 		digitalInput1 = new DigitalInput(1);//Left close
@@ -58,6 +57,5 @@ public class RobotMap {
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 		robotDrive.isSafetyEnabled();
-		robotDrive.setExpiration(200);
 	}
 }

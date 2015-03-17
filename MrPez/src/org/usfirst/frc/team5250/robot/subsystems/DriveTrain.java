@@ -4,8 +4,6 @@ import org.usfirst.frc.team5250.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-import org.usfirst.frc.team5250.robot.commands.Drive;
-
 public class DriveTrain extends Subsystem {
 	public void arcadeDrive(double move, double rotate) {
 		RobotMap.robotDrive.arcadeDrive(move,rotate);
@@ -15,8 +13,6 @@ public class DriveTrain extends Subsystem {
 		RobotMap.robotDrive.tankDrive(left,right);
 	}
 	
-    public void initDefaultCommand() {
-    	setDefaultCommand(new Drive());
-    }
+    public void initDefaultCommand() {}
 }
 
