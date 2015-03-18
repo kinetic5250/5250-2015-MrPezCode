@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 
 import org.usfirst.frc.team5250.robot.commands.AutoCommand;
-import org.usfirst.frc.team5250.robot.commands.Drive;
+import org.usfirst.frc.team5250.robot.commands.DriveCommand;
 
 public class Robot extends IterativeRobot {
     Command autonomousCommand;
@@ -36,7 +36,7 @@ public class Robot extends IterativeRobot {
 
     public void teleopInit() {
         if (autonomousCommand != null) autonomousCommand.cancel();
-        Scheduler.getInstance().add(new Drive());
+        Scheduler.getInstance().add(new DriveCommand());
     }
     
     public void disabledInit(){

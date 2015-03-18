@@ -5,9 +5,9 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 //import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.Joystick;
 
-import org.usfirst.frc.team5250.robot.commands.pawl.PawlClose;
-import org.usfirst.frc.team5250.robot.commands.pawl.PawlOpen;
-import org.usfirst.frc.team5250.robot.commands.pez.PezManual;
+import org.usfirst.frc.team5250.robot.commands.pawl.PawlCloseCommand;
+import org.usfirst.frc.team5250.robot.commands.pawl.PawlOpenCommand;
+import org.usfirst.frc.team5250.robot.commands.pez.PezManualCommand;
 import org.usfirst.frc.team5250.triggers.PezManualTrigger;
 
 public class OI {
@@ -24,8 +24,8 @@ public class OI {
     	leftBumper = new JoystickButton(driverJoystick, Constants.XBoxButtonType.kLeftBumper);
     	rightBumper = new JoystickButton(driverJoystick, Constants.XBoxButtonType.kRightBumper);
     	pezManual = new PezManualTrigger();
-    	leftBumper.whenPressed(new PawlOpen());
-    	rightBumper.whenPressed(new PawlClose());
-    	pezManual.whenActive(new PezManual());
+    	leftBumper.whenPressed(new PawlOpenCommand());
+    	rightBumper.whenPressed(new PawlCloseCommand());
+    	pezManual.whenActive(new PezManualCommand());
 	}
 }
