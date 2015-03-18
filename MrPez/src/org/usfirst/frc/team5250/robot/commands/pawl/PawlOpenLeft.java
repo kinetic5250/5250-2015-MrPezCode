@@ -15,7 +15,7 @@ public class PawlOpenLeft extends CommandBase {
 		pawlLeft.set(-1*Constants.pawlSpeed);	
 	}
 	protected boolean isFinished() {
-		return !(RobotMap.digitalInput0.get());
+		return !(RobotMap.pawlLeftOpenLimit.get());
 	}
 	
 	protected void interrupted() {

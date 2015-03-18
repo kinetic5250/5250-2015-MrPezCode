@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class PawlLeft extends Subsystem {
 	
 	public double set(double output) {
-		RobotMap.talon0.set(output);
+		RobotMap.pawlLeftMotor.set(output);
 		return output;
 	}
 	

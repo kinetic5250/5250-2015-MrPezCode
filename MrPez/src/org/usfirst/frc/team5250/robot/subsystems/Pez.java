@@ -10,23 +10,23 @@ public class Pez extends Subsystem {
 	double currentPosition;
 	
 	public void setPez(double position) {
-		RobotMap.pezElevator.set(position);
+		RobotMap.pezElevatorMotor.set(position);
 	}
 	
 	public void setPercentMode() {
-		currentPosition = RobotMap.pezElevator.getPosition();
-		RobotMap.pezElevator.disableControl();
-		RobotMap.pezElevator.setPercentMode();
-		RobotMap.pezElevator.enableControl(currentPosition);
+		currentPosition = RobotMap.pezElevatorMotor.getPosition();
+		RobotMap.pezElevatorMotor.disableControl();
+		RobotMap.pezElevatorMotor.setPercentMode();
+		RobotMap.pezElevatorMotor.enableControl(currentPosition);
 	}
 	
 	public void setPositionMode() {
-		currentPosition = RobotMap.pezElevator.getPosition();
-		RobotMap.pezElevator.disableControl();
-		RobotMap.pezElevator.setPositionMode(CANJaguar.kQuadEncoder, 
+		currentPosition = RobotMap.pezElevatorMotor.getPosition();
+		RobotMap.pezElevatorMotor.disableControl();
+		RobotMap.pezElevatorMotor.setPositionMode(CANJaguar.kQuadEncoder, 
 				Constants.kPezCodesPerRev, 
 				Constants.kPezP, Constants.kPezI, Constants.kPezD);
-		RobotMap.pezElevator.enableControl(currentPosition);
+		RobotMap.pezElevatorMotor.enableControl(currentPosition);
 	}
 	
 	protected void initDefaultCommand() {}

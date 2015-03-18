@@ -20,10 +20,10 @@ public class Drive extends CommandBase {
 	
 	protected void execute() {
 		joystickXAxis = Util.calculateDeadband(
-				OI.joystick0.getRawAxis(Constants.XBoxAxisType.kLeftX),
+				OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kLeftX),
 				Constants.driveTrainDeadband);
 		joystickYAxis = Util.calculateDeadband(
-				OI.joystick0.getRawAxis(Constants.XBoxAxisType.kLeftY), 
+				OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kLeftY), 
 				Constants.driveTrainDeadband);
 		XOutput = (joystickXAxis>0)?Math.pow(Math.abs(joystickXAxis),Constants.driveTrainExponent):
 				    Math.pow(Math.abs(joystickXAxis),Constants.driveTrainExponent)*-1;

@@ -15,6 +15,6 @@ public class Dashboard {
 	}
 	
 	public static void run() {
-		networkTable.putNumber("EncoderPos", RobotMap.pezElevator.getPosition());
+		networkTable.putNumber("EncoderPos", RobotMap.pezElevatorMotor.getPosition());
 	}
 }

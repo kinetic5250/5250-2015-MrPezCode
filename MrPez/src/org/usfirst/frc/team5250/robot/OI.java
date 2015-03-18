@@ -11,21 +11,21 @@ import org.usfirst.frc.team5250.robot.commands.pez.PezManual;
 import org.usfirst.frc.team5250.triggers.PezManualTrigger;
 
 public class OI {
-	public static Joystick joystick0;
+	public static Joystick driverJoystick;
 	//public static CameraServer cameraServer;
-	public static Button button5;
-	public static Button button6;
+	public static Button leftBumper;
+	public static Button rightBumper;
 	public static PezManualTrigger pezManual;
 	
 	public static void init() {
-		joystick0 = new Joystick(0);
+		driverJoystick = new Joystick(0);
 		//cameraServer = CameraServer.getInstance();
     	//cameraServer.startAutomaticCapture("cam0");
-    	button5 = new JoystickButton(joystick0, Constants.XBoxButtonType.kLeftBumper);
-    	button6 = new JoystickButton(joystick0, Constants.XBoxButtonType.kRightBumper);
+    	leftBumper = new JoystickButton(driverJoystick, Constants.XBoxButtonType.kLeftBumper);
+    	rightBumper = new JoystickButton(driverJoystick, Constants.XBoxButtonType.kRightBumper);
     	pezManual = new PezManualTrigger();
-    	button5.whenPressed(new PawlOpen());
-    	button6.whenPressed(new PawlClose());
+    	leftBumper.whenPressed(new PawlOpen());
+    	rightBumper.whenPressed(new PawlClose());
     	pezManual.whenActive(new PezManual());
 	}
 }

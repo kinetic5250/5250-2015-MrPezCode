@@ -16,7 +16,7 @@ public class PawlCloseLeft extends CommandBase {
 		
 	}
 	protected boolean isFinished() {
-		return !(RobotMap.digitalInput1.get());
+		return !(RobotMap.pawlLeftCloseLimit.get());
 	}
 	
 	protected void interrupted() {
