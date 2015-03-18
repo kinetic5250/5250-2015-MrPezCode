@@ -16,7 +16,9 @@ public class PezManualCommand extends CommandBase {
 
 	protected void execute() {
 		pez.setPez(Util.trim(
-		OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kRightTrigger) - OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kLeftTrigger), -1.0, 1.0));
+		OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kRightTrigger) 
+		- OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kLeftTrigger),
+		-1.0, 1.0)*-1);
 	}
 
 	protected boolean isFinished() {
