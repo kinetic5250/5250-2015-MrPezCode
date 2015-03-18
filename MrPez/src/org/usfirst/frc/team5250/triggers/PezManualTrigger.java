@@ -9,8 +9,8 @@ import edu.wpi.first.wpilibj.buttons.Trigger;
 public class PezManualTrigger extends Trigger {
 	public boolean get() {
 		return (Util.calculateDeadband(
-				(OI.joystick0.getRawAxis(Constants.XBoxAxisType.kLeftTrigger)
-						+OI.joystick0.getRawAxis(Constants.XBoxAxisType.kRightTrigger)),
+				OI.joystick0.getRawAxis(Constants.XBoxAxisType.kRightTrigger)
+					-OI.joystick0.getRawAxis(Constants.XBoxAxisType.kLeftTrigger),
 				Constants.kPezDeadband)!=0.0);
 	}
 }

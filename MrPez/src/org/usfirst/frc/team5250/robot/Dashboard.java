@@ -1,6 +1,6 @@
 package org.usfirst.frc.team5250.robot;
 
-//import org.usfirst.frc.team5250.robot.RobotMap;
+import org.usfirst.frc.team5250.robot.RobotMap;
 
 //import org.usfirst.frc.team5250.robot.subsystems.Pez;
 
@@ -15,6 +15,6 @@ public class Dashboard {
 	}
 	
 	public static void run() {
-		
+		networkTable.putNumber("EncoderPos", RobotMap.pezElevator.getPosition());
 	}
 }

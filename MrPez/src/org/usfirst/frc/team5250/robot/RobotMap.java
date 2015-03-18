@@ -8,11 +8,11 @@ import edu.wpi.first.wpilibj.AnalogInput;
 
 public class RobotMap {
 	
-	public static CANJaguar canJaguar21;
-	public static CANJaguar canJaguar22;
-	public static CANJaguar canJaguar23;
-	public static CANJaguar canJaguar24;
-	public static CANJaguar canJaguar25;
+	public static CANJaguar driveTrainLeftFront;
+	public static CANJaguar driveTrainRightFront;
+	public static CANJaguar driveTrainLeftRear;
+	public static CANJaguar driveTrainRightRear;
+	public static CANJaguar pezElevator;
 	
 	public static RobotDrive robotDrive;
 	
@@ -29,13 +29,14 @@ public class RobotMap {
 	
 	public static void init() {
 		
-		canJaguar21 = new CANJaguar(21); //left front
-		canJaguar22 = new CANJaguar(22); //right front
-		canJaguar23 = new CANJaguar(23); //left rear
-		canJaguar24 = new CANJaguar(24); //right rear
-		canJaguar25 = new CANJaguar(25); //Pez
+		driveTrainLeftFront = new CANJaguar(Constants.driveTrainLeftFrontID); //left front
+		driveTrainRightFront = new CANJaguar(Constants.driveTrainRightFrontID); //right front
+		driveTrainLeftRear = new CANJaguar(Constants.driveTrainLeftRearID); //left rear
+		driveTrainRightRear = new CANJaguar(Constants.driveTrainRightRearID); //right rear
+		pezElevator = new CANJaguar(Constants.pezElevatorID); //Pez
 		
-		robotDrive = new RobotDrive(canJaguar21, canJaguar23, canJaguar22, canJaguar24); //Basic DriveTrain
+		robotDrive = new RobotDrive(driveTrainLeftFront, driveTrainRightFront,
+			driveTrainLeftRear, driveTrainRightRear); //Basic DriveTrain
 		
 		talon0 = new Talon(0); //Pawl left w/ limit switches
 		talon1 = new Talon(1); //Pawl right w/ limit switches
@@ -47,15 +48,16 @@ public class RobotMap {
 		
 		analogInput0 = new AnalogInput(0);
 
-		canJaguar21.setVoltageRampRate(Constants.driveTrainRampRate);
-		canJaguar22.setVoltageRampRate(Constants.driveTrainRampRate);
-		canJaguar23.setVoltageRampRate(Constants.driveTrainRampRate);
-		canJaguar24.setVoltageRampRate(Constants.driveTrainRampRate);
+		driveTrainRightFront.setVoltageRampRate(Constants.driveTrainRampRate);
+		driveTrainLeftFront.setVoltageRampRate(Constants.driveTrainRampRate);
+		driveTrainRightRear.setVoltageRampRate(Constants.driveTrainRampRate);
+		driveTrainLeftRear.setVoltageRampRate(Constants.driveTrainRampRate);
 		
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
 		robotDrive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
 		robotDrive.isSafetyEnabled();
+		robotDrive.setExpiration(250);
 	}
 }

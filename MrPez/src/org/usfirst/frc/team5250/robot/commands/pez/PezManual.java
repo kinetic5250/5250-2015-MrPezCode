@@ -2,7 +2,6 @@ package org.usfirst.frc.team5250.robot.commands.pez;
 
 import org.usfirst.frc.team5250.robot.Constants;
 import org.usfirst.frc.team5250.robot.OI;
-import org.usfirst.frc.team5250.robot.RobotMap;
 import org.usfirst.frc.team5250.robot.commands.CommandBase;
 import org.usfirst.frc.team5250.util.Util;
 
@@ -12,13 +11,13 @@ public class PezManual extends CommandBase {
 	}
 	
 	protected void initialize() {
-		RobotMap.canJaguar25.setPercentMode();
+		pez.setPercentMode();
 	}
 	
     protected void execute() {
     	pez.setPez(Util.trim(
-    			OI.joystick0.getRawAxis(Constants.XBoxAxisType.kLeftTrigger)
-				+ OI.joystick0.getRawAxis(Constants.XBoxAxisType.kRightTrigger),
+    			OI.joystick0.getRawAxis(Constants.XBoxAxisType.kRightTrigger)
+				-OI.joystick0.getRawAxis(Constants.XBoxAxisType.kLeftTrigger),
 						-1.0, 1.0));
     }
 
