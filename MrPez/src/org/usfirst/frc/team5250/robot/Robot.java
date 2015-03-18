@@ -12,15 +12,15 @@ public class Robot extends IterativeRobot {
 	Command autonomousCommand;
 	SendableChooser sendableChooser;
 	public void robotInit() {
-		RobotMap.init();
-		OI.init();
-		Dashboard.init();
+		try {
+			RobotMap.init();
+			OI.init();
+			Dashboard.init();
+	    } catch (Exception ex){
+	        ex.printStackTrace();;
+	    }
 		sendableChooser = new SendableChooser();
 		sendableChooser.addDefault("Autocommand", new AutoCommand());
-	}
-
-	public void disabledPeriodic() {
-		Scheduler.getInstance().run();
 	}
 
 	public void autonomousInit() {
@@ -40,11 +40,9 @@ public class Robot extends IterativeRobot {
 	}
 
 	public void disabledInit() {
-
 	}
-
-	public void teleopPeriodic() {
+	
+	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
-		Dashboard.run();
 	}
 }

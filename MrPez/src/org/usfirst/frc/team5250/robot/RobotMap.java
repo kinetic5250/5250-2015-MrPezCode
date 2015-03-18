@@ -13,6 +13,9 @@ public class RobotMap {
 	public static CANJaguar driveTrainLeftRearMotor;
 	public static CANJaguar driveTrainRightRearMotor;
 	public static CANJaguar pezElevatorMotor;
+	public static CANJaguar armArmMotor;
+	public static CANJaguar armClawMotor;
+	public static CANJaguar armWristMotor;
 
 	public static RobotDrive robotDrive;
 
@@ -31,6 +34,11 @@ public class RobotMap {
 		driveTrainLeftRearMotor = new CANJaguar(Constants.driveTrainLeftRearID); //left rear
 		driveTrainRightRearMotor = new CANJaguar(Constants.driveTrainRightRearID); //right rear
 		pezElevatorMotor = new CANJaguar(Constants.pezElevatorID); //Pez
+		armArmMotor = new CANJaguar(Constants.armArmID); //Pez
+		pezElevatorMotor = new CANJaguar(Constants.pezElevatorID); //Pez
+		armArmMotor = new CANJaguar(Constants.armArmID); //Arm
+		armClawMotor = new CANJaguar(Constants.armClawID); //Claw
+		armWristMotor = new CANJaguar(Constants.armWristID); //Wrist
 
 		robotDrive = new RobotDrive(driveTrainLeftFrontMotor, driveTrainRightFrontMotor,
 		driveTrainLeftRearMotor, driveTrainRightRearMotor); //Basic DriveTrain

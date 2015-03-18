@@ -6,6 +6,9 @@ public final class Constants {
 	public static final int driveTrainLeftRearID = 29;
 	public static final int driveTrainRightRearID = 30;
 	public static final int pezElevatorID = 28;
+	public static final int armArmID = 31;
+	public static final int armClawID = 32;
+	public static final int armWristID = 33;
 
 	public static final double driveTrainExponent = 2.174;
 	public static final double driveTrainRampRate = 14.0;
