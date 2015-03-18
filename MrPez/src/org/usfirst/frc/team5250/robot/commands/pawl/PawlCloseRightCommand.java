@@ -5,8 +5,6 @@ import org.usfirst.frc.team5250.robot.RobotMap;
 import org.usfirst.frc.team5250.robot.commands.CommandBase;
 
 public class PawlCloseRightCommand extends CommandBase {
-	boolean finished = false;
-	
 	public PawlCloseRightCommand() {
 		requires(pawlRight);
 	}

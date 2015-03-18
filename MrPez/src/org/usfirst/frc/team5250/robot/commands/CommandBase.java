@@ -2,17 +2,20 @@ package org.usfirst.frc.team5250.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
+
 //import org.usfirst.frc.team5250.robot.Robot;
 import org.usfirst.frc.team5250.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team5250.robot.subsystems.pawl.PawlLeft;
 import org.usfirst.frc.team5250.robot.subsystems.pawl.PawlRight;
 import org.usfirst.frc.team5250.robot.subsystems.Pez;
+import org.usfirst.frc.team5250.robot.subsystems.arm.Arm;
 
 public class CommandBase extends Command {
 	protected static DriveTrain driveTrain = new DriveTrain();
 	protected static Pez pez = new Pez();
 	protected static PawlLeft pawlLeft = new PawlLeft();
 	protected static PawlRight pawlRight = new PawlRight();
+	protected static Arm arm = new Arm();
 
 	// Called just before this Command runs the first time
 	protected void initialize() {

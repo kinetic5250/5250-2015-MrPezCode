@@ -5,8 +5,6 @@ import org.usfirst.frc.team5250.robot.commands.CommandBase;
 import org.usfirst.frc.team5250.robot.Constants;
 
 public class PawlOpenLeftCommand extends CommandBase {
-	boolean finished = false;
-	
 	public PawlOpenLeftCommand() {
 		requires(pawlLeft);
 	}
