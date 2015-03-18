@@ -24,7 +24,9 @@ public class PezManualCommand extends CommandBase {
 	protected boolean isFinished() {
 		return false;
 	}
+	
 	protected void end() {}
+	
 	protected void interrupted() {
 		end();
 	}
