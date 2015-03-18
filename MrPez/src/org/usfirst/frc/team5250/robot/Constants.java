@@ -1,14 +1,14 @@
 package org.usfirst.frc.team5250.robot;
 
 public final class Constants {
-	public static final int driveTrainLeftFrontID = 26;
-	public static final int driveTrainRightFrontID = 27;
-	public static final int driveTrainLeftRearID = 29;
-	public static final int driveTrainRightRearID = 30;
+	public static final int driveTrainLeftFrontID = 6;
+	public static final int driveTrainRightFrontID = 7;
+	public static final int driveTrainLeftRearID = 8;
+	public static final int driveTrainRightRearID = 9;
 	public static final int pezElevatorID = 28;
-	public static final int armArmID = 31;
-	public static final int armClawID = 32;
-	public static final int armWristID = 33;
+	public static final int armArmID = 26;
+	public static final int armClawID = 27;
+	public static final int armWristID = 29;
 
 	public static final double driveTrainExponent = 2.174;
 	public static final double driveTrainRampRate = 14.000;

@@ -9,6 +9,8 @@ import org.usfirst.frc.team5250.robot.subsystems.pawl.PawlLeft;
 import org.usfirst.frc.team5250.robot.subsystems.pawl.PawlRight;
 import org.usfirst.frc.team5250.robot.subsystems.Pez;
 import org.usfirst.frc.team5250.robot.subsystems.arm.Arm;
+import org.usfirst.frc.team5250.robot.subsystems.arm.Claw;
+import org.usfirst.frc.team5250.robot.subsystems.arm.Wrist;
 
 public class CommandBase extends Command {
 	protected static DriveTrain driveTrain = new DriveTrain();
@@ -16,7 +18,9 @@ public class CommandBase extends Command {
 	protected static PawlLeft pawlLeft = new PawlLeft();
 	protected static PawlRight pawlRight = new PawlRight();
 	protected static Arm arm = new Arm();
-
+	protected static Claw claw = new Claw();
+	protected static Wrist wrist = new Wrist();
+	
 	// Called just before this Command runs the first time
 	protected void initialize() {
 

@@ -11,6 +11,10 @@ public class DriveCommand extends CommandBase {
 	public DriveCommand() {
 		requires(driveTrain);
 	}
+	
+	protected void initialize() {
+		System.out.println("DriveCommand");
+	}
 	protected void execute() {
 		joystickXAxis = Util.calculateDeadband(OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kLeftX), Constants.driveTrainDeadband);
 		joystickYAxis = Util.calculateDeadband(OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kLeftY), Constants.driveTrainDeadband);

@@ -2,19 +2,19 @@ package org.usfirst.frc.team5250.robot.commands.arm;
 
 import org.usfirst.frc.team5250.robot.commands.CommandBase;
 
-public class ArmCommand extends CommandBase {
+public class ClawCommand extends CommandBase {
 	double speed = 0.0;
 	
-	public ArmCommand(double speed) {
+	public ClawCommand(double speed) {
 		this.speed = speed;
 	}
 	
 	protected void initialize() {
-		System.out.println("ArmCommand");
+		System.out.println("ClawCommand");
 	}
 	
 	protected void execute() {
-		arm.set(speed);
+		claw.set(speed);
 	}
 	protected boolean isFinished() {
 		return false;
@@ -25,6 +25,6 @@ public class ArmCommand extends CommandBase {
 	}
 	
 	protected void end() {
-		arm.set(0);
+		claw.set(0);
 	}
 }
