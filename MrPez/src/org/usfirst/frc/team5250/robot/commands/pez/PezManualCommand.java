@@ -9,20 +9,21 @@ public class PezManualCommand extends CommandBase {
 	public PezManualCommand() {
 		requires(pez);
 	}
-	
+
 	protected void initialize() {
 		pez.setPercentMode();
 	}
-	
-    protected void execute() {
-    	pez.setPez(Util.trim(
-    			OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kRightTrigger)
-				-OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kLeftTrigger),
-						-1.0, 1.0));
-    }
 
-    protected boolean isFinished() {return false;}
-    protected void end() {}
+	protected void execute() {
+		pez.setPez(Util.trim(
+		OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kRightTrigger) - OI.driverJoystick.getRawAxis(Constants.XBoxAxisType.kLeftTrigger), -1.0, 1.0));
+	}
 
-    protected void interrupted() { end(); }
+	protected boolean isFinished() {
+		return false;
+	}
+	protected void end() {}
+	protected void interrupted() {
+		end();
+	}
 }

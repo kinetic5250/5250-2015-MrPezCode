@@ -9,42 +9,42 @@ import org.usfirst.frc.team5250.robot.commands.AutoCommand;
 import org.usfirst.frc.team5250.robot.commands.DriveCommand;
 
 public class Robot extends IterativeRobot {
-    Command autonomousCommand;
-    SendableChooser sendableChooser;
-    public void robotInit() {
+	Command autonomousCommand;
+	SendableChooser sendableChooser;
+	public void robotInit() {
 		RobotMap.init();
 		OI.init();
 		Dashboard.init();
-        sendableChooser = new SendableChooser();
-        sendableChooser.addDefault("Autocommand", new AutoCommand());
-    }
-	
+		sendableChooser = new SendableChooser();
+		sendableChooser.addDefault("Autocommand", new AutoCommand());
+	}
+
 	public void disabledPeriodic() {
 		Scheduler.getInstance().run();
 	}
 
-    public void autonomousInit() {
-        if (autonomousCommand != null) autonomousCommand.start();
-    }
+	public void autonomousInit() {
+		if (autonomousCommand != null) autonomousCommand.start();
+	}
 
-    /**
-     * This function is called periodically during autonomous
-     */
-    public void autonomousPeriodic() {
-        Scheduler.getInstance().run();
-    }
+	/**
+	 * This function is called periodically during autonomous
+	 */
+	public void autonomousPeriodic() {
+		Scheduler.getInstance().run();
+	}
 
-    public void teleopInit() {
-        if (autonomousCommand != null) autonomousCommand.cancel();
-        Scheduler.getInstance().add(new DriveCommand());
-    }
-    
-    public void disabledInit(){
-    	
-    }
+	public void teleopInit() {
+		if (autonomousCommand != null) autonomousCommand.cancel();
+		Scheduler.getInstance().add(new DriveCommand());
+	}
 
-    public void teleopPeriodic() {
-        Scheduler.getInstance().run();
-        Dashboard.run();
-    }
+	public void disabledInit() {
+
+	}
+
+	public void teleopPeriodic() {
+		Scheduler.getInstance().run();
+		Dashboard.run();
+	}
 }

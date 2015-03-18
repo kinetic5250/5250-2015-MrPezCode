@@ -16,16 +16,16 @@ public class OI {
 	public static Button leftBumper;
 	public static Button rightBumper;
 	public static PezManualTrigger pezManual;
-	
+
 	public static void init() {
 		driverJoystick = new Joystick(0);
 		//cameraServer = CameraServer.getInstance();
-    	//cameraServer.startAutomaticCapture("cam0");
-    	leftBumper = new JoystickButton(driverJoystick, Constants.XBoxButtonType.kLeftBumper);
-    	rightBumper = new JoystickButton(driverJoystick, Constants.XBoxButtonType.kRightBumper);
-    	pezManual = new PezManualTrigger();
-    	leftBumper.whenPressed(new PawlOpenCommand());
-    	rightBumper.whenPressed(new PawlCloseCommand());
-    	pezManual.whenActive(new PezManualCommand());
+		//cameraServer.startAutomaticCapture("cam0");
+		leftBumper = new JoystickButton(driverJoystick, Constants.XBoxButtonType.kLeftBumper);
+		rightBumper = new JoystickButton(driverJoystick, Constants.XBoxButtonType.kRightBumper);
+		pezManual = new PezManualTrigger();
+		leftBumper.whenPressed(new PawlOpenCommand());
+		rightBumper.whenPressed(new PawlCloseCommand());
+		pezManual.whenActive(new PezManualCommand());
 	}
 }
