@@ -1,6 +1,6 @@
 package org.usfirst.frc.team5250.robot;
 
-import org.usfirst.frc.team5250.robot.RobotMap;
+import org.usfirst.frc.team5250.robot.RM;
 import edu.wpi.first.wpilibj.networktables.NetworkTable;
 
 public class Dashboard {
@@ -11,6 +11,6 @@ public class Dashboard {
 	}
 
 	public static void run() {
-		networkTable.putNumber("EncoderPos", RobotMap.pezElevatorMotor.getPosition());
+		networkTable.putNumber("EncoderPos", RM.pezElevatorMotor.getPosition());
 	}
 }

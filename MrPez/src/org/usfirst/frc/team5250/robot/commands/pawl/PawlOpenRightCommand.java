@@ -1,6 +1,6 @@
 package org.usfirst.frc.team5250.robot.commands.pawl;
 
-import org.usfirst.frc.team5250.robot.RobotMap;
+import org.usfirst.frc.team5250.robot.RM;
 import org.usfirst.frc.team5250.robot.commands.CommandBase;
 import org.usfirst.frc.team5250.robot.Constants;
 
@@ -10,10 +10,10 @@ public class PawlOpenRightCommand extends CommandBase {
 	}
 	
 	protected void execute() {
-		pawlRight.set(Constants.pawlSpeed);
+		pawlRight.set(Constants.pawlSpeed*Constants.clockWise);
 	}
 	protected boolean isFinished() {
-		return !(RobotMap.pawlRightOpenLimit.get());
+		return !(RM.pawlRightOpenLimit.get());
 	}
 	
 	protected void interrupted() {

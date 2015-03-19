@@ -1,6 +1,6 @@
 package org.usfirst.frc.team5250.robot.subsystems;
 
-import org.usfirst.frc.team5250.robot.RobotMap;
+import org.usfirst.frc.team5250.robot.RM;
 
 import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -10,23 +10,23 @@ public class Pez extends Subsystem {
 	double currentPosition;
 	
 	public void setPez(double position) {
-		RobotMap.pezElevatorMotor.set(position);
+		RM.pezElevatorMotor.set(position);
 	}
 	
 	public void setPercentMode() {
-		currentPosition = RobotMap.pezElevatorMotor.getPosition();
-		RobotMap.pezElevatorMotor.disableControl();
-		RobotMap.pezElevatorMotor.setPercentMode();
-		RobotMap.pezElevatorMotor.enableControl(currentPosition);
+		currentPosition = RM.pezElevatorMotor.getPosition();
+		RM.pezElevatorMotor.disableControl();
+		RM.pezElevatorMotor.setPercentMode();
+		RM.pezElevatorMotor.enableControl(currentPosition);
 	}
 	
 	public void setPositionMode() {
-		currentPosition = RobotMap.pezElevatorMotor.getPosition();
-		RobotMap.pezElevatorMotor.disableControl();
-		RobotMap.pezElevatorMotor.setPositionMode(CANJaguar.kQuadEncoder, 
+		currentPosition = RM.pezElevatorMotor.getPosition();
+		RM.pezElevatorMotor.disableControl();
+		RM.pezElevatorMotor.setPositionMode(CANJaguar.kQuadEncoder, 
 				Constants.kPezCodesPerRev, 
 				Constants.kPezP, Constants.kPezI, Constants.kPezD);
-		RobotMap.pezElevatorMotor.enableControl(currentPosition);
+		RM.pezElevatorMotor.enableControl(currentPosition);
 	}
 	
 	protected void initDefaultCommand() {}

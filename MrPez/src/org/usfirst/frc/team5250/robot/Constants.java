@@ -9,7 +9,12 @@ public final class Constants {
 	public static final int armArmID = 26;
 	public static final int armClawID = 27;
 	public static final int armWristID = 29;
-
+	
+	public static final int leftOpenLimitID = 0; 
+	public static final int leftCloseLimitID = 1;
+	public static final int rightOpenLimitID = 2;
+	public static final int rightCloseLimitID = 3;
+	
 	public static final double driveTrainExponent = 2.174;
 	public static final double driveTrainRampRate = 14.000;
 	public static final double driveTrainDeadband = 0.050;
