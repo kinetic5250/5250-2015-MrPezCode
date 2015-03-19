@@ -1,5 +1,6 @@
 package org.usfirst.frc.team5250.robot.commands.arm;
 
+import org.usfirst.frc.team5250.robot.OI;
 import org.usfirst.frc.team5250.robot.commands.CommandBase;
 
 public class WristCommand extends CommandBase {
@@ -17,7 +18,7 @@ public class WristCommand extends CommandBase {
 		wrist.set(speed);
 	}
 	protected boolean isFinished() {
-		return false;
+		return (OI.driverJoystick.getPOV()==-1|OI.driverJoystick.getPOV()==90|OI.driverJoystick.getPOV()==270);
 	}
 	
 	protected void interrupted() {

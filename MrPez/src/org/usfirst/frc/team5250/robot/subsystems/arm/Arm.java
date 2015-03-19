@@ -8,5 +8,6 @@ public class Arm extends Subsystem {
 		RM.armArmMotor.set(output);
 		return output;
 	};
+	
 	protected void initDefaultCommand() {}
 }

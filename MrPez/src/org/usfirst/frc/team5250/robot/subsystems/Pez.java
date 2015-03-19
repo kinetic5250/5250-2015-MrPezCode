@@ -9,14 +9,14 @@ import org.usfirst.frc.team5250.robot.Constants;
 public class Pez extends Subsystem {
 	double currentPosition;
 	
-	public void setPez(double position) {
+	public void set(double position) {
 		RM.pezElevatorMotor.set(position);
 	}
 	
 	public void setPercentMode() {
 		currentPosition = RM.pezElevatorMotor.getPosition();
 		RM.pezElevatorMotor.disableControl();
-		RM.pezElevatorMotor.setPercentMode();
+		RM.pezElevatorMotor.setPercentMode(CANJaguar.kQuadEncoder, Constants.pezCodesPerRev);
 		RM.pezElevatorMotor.enableControl(currentPosition);
 	}
 	
@@ -24,8 +24,8 @@ public class Pez extends Subsystem {
 		currentPosition = RM.pezElevatorMotor.getPosition();
 		RM.pezElevatorMotor.disableControl();
 		RM.pezElevatorMotor.setPositionMode(CANJaguar.kQuadEncoder, 
-				Constants.kPezCodesPerRev, 
-				Constants.kPezP, Constants.kPezI, Constants.kPezD);
+				Constants.pezCodesPerRev, 
+				Constants.PezP, Constants.PezI, Constants.PezD);
 		RM.pezElevatorMotor.enableControl(currentPosition);
 	}
 	
