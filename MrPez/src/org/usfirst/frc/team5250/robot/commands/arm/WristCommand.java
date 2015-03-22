@@ -7,7 +7,9 @@ public class WristCommand extends CommandBase {
 	double speed = 0.0;
 	
 	public WristCommand(double speed) {
+		requires(wrist);
 		this.speed = speed;
+		System.out.println("WristCommand");
 	}
 	
 	protected void initialize() {

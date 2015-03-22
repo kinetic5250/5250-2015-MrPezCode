@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.CANJaguar;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.DigitalInput;
-//import edu.wpi.first.wpilibj.AnalogInput;
 
 public class RM {
 
@@ -31,19 +30,17 @@ public class RM {
 
 	public static void init() {
 
-		driveTrainLeftFrontMotor = new CANJaguar(Constants.driveTrainLeftFrontID); //left front
-		driveTrainRightFrontMotor = new CANJaguar(Constants.driveTrainRightFrontID); //right front
-		driveTrainLeftRearMotor = new CANJaguar(Constants.driveTrainLeftRearID); //left rear
-		driveTrainRightRearMotor = new CANJaguar(Constants.driveTrainRightRearID); //right rear
-		pezElevatorMotor = new CANJaguar(Constants.pezElevatorID); //Pez
-		armArmMotor = new CANJaguar(Constants.armArmID); //Pez
-		pezElevatorMotor = new CANJaguar(Constants.pezElevatorID); //Pez
-		armArmMotor = new CANJaguar(Constants.armArmID); //Arm
-		armClawMotor = new CANJaguar(Constants.armClawID); //Claw
-		armWristMotor = new CANJaguar(Constants.armWristID); //Wrist
+		driveTrainLeftRearMotor = new CANJaguar(21); //left rear
+		driveTrainRightRearMotor = new CANJaguar(22); //right rear
+		driveTrainLeftFrontMotor = new CANJaguar(23); //left front
+		driveTrainRightFrontMotor = new CANJaguar(24); //right front
+		pezElevatorMotor = new CANJaguar(25); //Pez
+		armArmMotor = new CANJaguar(26); //Pez
+		armClawMotor = new CANJaguar(27); //Claw
+		armWristMotor = new CANJaguar(28); //Wrist
 		
-		robotDrive = new RobotDrive(driveTrainLeftFrontMotor, driveTrainRightFrontMotor,
-		driveTrainLeftRearMotor, driveTrainRightRearMotor); //Basic DriveTrain
+		robotDrive = new RobotDrive(driveTrainLeftFrontMotor, driveTrainLeftRearMotor,
+		driveTrainRightFrontMotor, driveTrainRightRearMotor); //Basic DriveTrain
 
 		pawlLeftMotor = new Talon(0); //Pawl left w/ limit switches
 		pawlRightMotor = new Talon(1); //Pawl right w/ limit switches

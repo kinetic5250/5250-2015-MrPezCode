@@ -7,7 +7,9 @@ public class ClawCommand extends CommandBase {
 	double speed = 0.0;
 	
 	public ClawCommand(double speed) {
+		requires(claw);
 		this.speed = speed;
+		System.out.println("ClawCommand");
 	}
 	
 	protected void initialize() {

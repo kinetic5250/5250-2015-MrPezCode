@@ -8,6 +8,7 @@ import org.usfirst.frc.team5250.util.Util;
 public class PezManualCommand extends CommandBase {
 	public PezManualCommand() {
 		requires(pez);
+		System.out.println("PezManualCommand");
 	}
 
 	protected void initialize() {

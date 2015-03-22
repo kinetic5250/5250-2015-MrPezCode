@@ -4,7 +4,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class PawlCloseCommand extends CommandGroup {
 	public PawlCloseCommand() {
-		addParallel(new PawlCloseLeftCommand());
-		addParallel(new PawlCloseRightCommand());
+		System.out.println("PawlCloseCommand");
+		addParallel(new LeftPawlCloseCommand());
+		addParallel(new RightPawlCloseCommand());
 	}
 }

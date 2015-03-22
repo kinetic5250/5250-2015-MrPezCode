@@ -8,6 +8,7 @@ import org.usfirst.frc.team5250.util.Util;
 public class ArmManualCommand extends CommandBase {
 	public ArmManualCommand() {
 		requires(arm);
+		System.out.println("ArmManualCommand");
 	}
 
 	protected void initialize() {}

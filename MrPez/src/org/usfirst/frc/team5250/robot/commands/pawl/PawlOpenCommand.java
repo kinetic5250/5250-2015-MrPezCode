@@ -4,7 +4,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class PawlOpenCommand extends CommandGroup {
 	public PawlOpenCommand() {
-		addParallel(new PawlOpenLeftCommand());
-		addParallel(new PawlOpenRightCommand());
+		System.out.println("PawlOpenCommand");
+		addParallel(new LeftPawlOpenCommand());
+		addParallel(new RightPawlOpenCommand());
 	}
 }
